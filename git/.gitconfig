@@ -1,0 +1,20 @@
+# This is Git's per-user configuration file.
+[core]
+# Please adapt and uncomment the following lines:
+user = Alyssa Ross
+email = hi@alyssa.is
+	excludesfile = /Users/alyssais/.gitignore_global
+[user]
+	name = Alyssa Ross
+	email = hi@alyssa.is
+[alias]
+	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+[push]
+	default = current
+[merge]
+	conflictstyle = diff3
+
+[color "status"]
+  added = green
+  changed = red
+  untracked = yellow
