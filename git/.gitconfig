@@ -1,9 +1,8 @@
 # This is Git's per-user configuration file.
 [core]
-# Please adapt and uncomment the following lines:
-user = Alyssa Ross
-email = hi@alyssa.is
-	excludesfile = /Users/alyssais/.gitignore_global
+  user = Alyssa Ross
+  email = hi@alyssa.is
+  excludesfile = ~/.gitignore_global
 [user]
 	name = Alyssa Ross
 	email = hi@alyssa.is
