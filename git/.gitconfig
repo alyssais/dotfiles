@@ -1,8 +1,8 @@
 # This is Git's per-user configuration file.
 [core]
-  user = Alyssa Ross
-  email = hi@alyssa.is
-  excludesfile = ~/.gitignore_global
+	user = Alyssa Ross
+	email = hi@alyssa.is
+	excludesfile = ~/.gitignore_global
 [user]
 	name = Alyssa Ross
 	email = hi@alyssa.is
@@ -12,8 +12,7 @@
 	default = current
 [merge]
 	conflictstyle = diff3
-
 [color "status"]
-  added = green
-  changed = red
-  untracked = yellow
+	added = yellow
+	changed = green
+	untracked = cyan
