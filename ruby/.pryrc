@@ -45,5 +45,3 @@ Hirb::View.instance_eval do
 		@output_method = nil
 	end
 end
-
-Hirb.enable
