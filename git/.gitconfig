@@ -6,6 +6,7 @@
 [user]
 	name = Alyssa Ross
 	email = hi@alyssa.is
+	signingkey = 9EA786B5
 [alias]
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 [push]
@@ -25,3 +26,5 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+[commit]
+	gpgsign = true
