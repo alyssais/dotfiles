@@ -1,11 +1,7 @@
-require 'shellwords'
+#!/usr/bin/env ruby
+# shebang used to trigger syntax highlighting in some editors
 
-if defined?(PryByebug)
-	Pry.commands.alias_command 'c', 'continue'
-	Pry.commands.alias_command 's', 'step'
-	Pry.commands.alias_command 'n', 'next'
-	Pry.commands.alias_command 'f', 'finish'
-end
+require 'shellwords'
 
 # Hit Enter to repeat last command
 Pry::Commands.command /^$/, "repeat last command" do
@@ -18,7 +14,7 @@ def require_external_gem(name)
 
 		dir = Bundler.with_clean_env do
 			`echo #{name.shellescape} | ruby -e \
-				'puts Gem::Specification.find_by_name(STDIN.read.chomp).gem_dir'`.chomp
+				'puts Gem::Specification.find_by_name(STDIN.read.chomp).gem_dir' 2> /dev/null`.chomp
 		end
 
 		$: << File.join(dir, "lib")
