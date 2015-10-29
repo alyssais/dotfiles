@@ -16,6 +16,7 @@ def require_external_gem(name)
 			`echo #{name.shellescape} | ruby -e \
 				'puts Gem::Specification.find_by_name(STDIN.read.chomp).gem_dir' 2> /dev/null`.chomp
 		end
+		raise LoadError if dir.empty?
 
 		$: << File.join(dir, "lib")
 
