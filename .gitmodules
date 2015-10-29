@@ -1,0 +1,3 @@
+[submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/emmet-sublime"]
+	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/emmet-sublime
+	url = git://github.com/sergeche/emmet-sublime.git
