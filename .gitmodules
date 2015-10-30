@@ -4,3 +4,6 @@
 [submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/editorconfig-sublime"]
 	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/editorconfig-sublime
 	url = git://github.com/sindresorhus/editorconfig-sublime.git
+[submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/SideBarEnhancements"]
+	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/SideBarEnhancements
+	url = git://github.com/titoBouzout/SideBarEnhancements.git
