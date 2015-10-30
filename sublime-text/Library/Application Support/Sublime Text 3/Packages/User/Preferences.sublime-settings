@@ -1,4 +1,5 @@
 {
+  "color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
 	"font_size": 12,
 	"hot_exit": false,
 	"ignored_packages":
@@ -7,6 +8,7 @@
 	],
 	"remember_open_files": false,
   "tab_size": 2,
+  "theme": "Spacegray.sublime-theme",
   "translate_tabs_to_spaces": true,
   "use_tab_stops": true
 }
