@@ -1,3 +1,6 @@
 [submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/emmet-sublime"]
 	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/emmet-sublime
 	url = git://github.com/sergeche/emmet-sublime.git
+[submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/editorconfig-sublime"]
+	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/editorconfig-sublime
+	url = git://github.com/sindresorhus/editorconfig-sublime.git
