@@ -26,3 +26,5 @@
 	untracked = cyan
 [commit]
 	gpgsign = true
+[help]
+	autocorrect = 1
