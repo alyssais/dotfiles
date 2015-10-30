@@ -10,3 +10,6 @@ trim_trailing_whitespace = true
 
 [*.{markdown,mdown,mkdn,md,mkd,mdwn,mdtxt,mdtext,text}]
 trim_trailing_whitespace = false
+
+[.git{config,modules}]
+indent_style = tabs
