@@ -1,7 +1,9 @@
 {
 	"font_size": 12,
+	"hot_exit": false,
 	"ignored_packages":
 	[
 		"Vintage"
-	]
+	],
+	"remember_open_files": false
 }
