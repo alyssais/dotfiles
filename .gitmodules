@@ -10,3 +10,6 @@
 [submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/Theme - Spacegray"]
 	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/Theme - Spacegray
 	url = git://github.com/kkga/spacegray.git
+[submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/sass-textmate-bundle"]
+	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/sass-textmate-bundle
+	url = https://github.com/nathos/sass-textmate-bundle
