@@ -5,9 +5,9 @@
   Alternatively, run these Terminal commands:
 
       defaults write com.apple.safari UserStyleSheetEnabled 1
-      defaults write com.apple.safari UserStyleSheetLocationURLString /path/to/user-styles.css
+      defaults write com.apple.safari UserStyleSheetLocationURLString /path/to/.safari.css
       defaults write com.apple.safari WebKitUserStyleSheetEnabledPreferenceKey 1
-      defaults write com.apple.safari WebKitUserStyleSheetLocationPreferenceKey /path/to/user-styles.css
+      defaults write com.apple.safari WebKitUserStyleSheetLocationPreferenceKey /path/to/.safari.css
  */
 
 /* Purple GitHub contribution graphs! */
