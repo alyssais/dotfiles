@@ -1,0 +1,16 @@
+/*
+  To install this file, you need to point Safari to it.
+  Safari > Preferences > Advanced > Style sheet
+
+  Alternatively, run these Terminal commands:
+
+      defaults write com.apple.safari UserStyleSheetEnabled 1
+      defaults write com.apple.safari UserStyleSheetLocationURLString /path/to/user-styles.css
+      defaults write com.apple.safari WebKitUserStyleSheetEnabledPreferenceKey 1
+      defaults write com.apple.safari WebKitUserStyleSheetLocationPreferenceKey /path/to/user-styles.css
+ */
+
+/* Purple GitHub contribution graphs! */
+.js-calendar-graph-svg, .legend {
+  -webkit-filter: hue-rotate(180deg);
+}
