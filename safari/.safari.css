@@ -2,15 +2,25 @@
   To install this file, you need to point Safari to it.
   Safari > Preferences > Advanced > Style sheet
 
-  Alternatively, run these Terminal commands:
+  Alternatively, you can execute this file as a Ruby script using the -x option
+  to install the stylesheet:
 
-      defaults write com.apple.safari UserStyleSheetEnabled 1
-      defaults write com.apple.safari UserStyleSheetLocationURLString /path/to/.safari.css
-      defaults write com.apple.safari WebKitUserStyleSheetEnabledPreferenceKey 1
-      defaults write com.apple.safari WebKitUserStyleSheetLocationPreferenceKey /path/to/.safari.css
+      ruby -x .safari.css
  */
 
 /* Purple GitHub contribution graphs! */
 .js-calendar-graph-svg, .legend {
   -webkit-filter: hue-rotate(180deg);
 }
+
+
+/*
+
+#!ruby
+
+system "defaults write com.apple.safari UserStyleSheetEnabled 1"
+system *%w[defaults write com.apple.safari UserStyleSheetLocationURLString], File.expand_path($0)
+system "defaults write com.apple.safari WebKitUserStyleSheetEnabledPreferenceKey 1"
+system *%w[defaults write com.apple.safari WebKitUserStyleSheetLocationPreferenceKey], File.expand_path($0)
+
+# */
