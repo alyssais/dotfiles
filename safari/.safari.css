@@ -13,6 +13,11 @@
   -webkit-filter: hue-rotate(180deg);
 }
 
+/* Fix overflow scrolling on TopHat. */
+body.student {
+  overflow: hidden;
+}
+
 
 /*
 
