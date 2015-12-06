@@ -9,7 +9,7 @@
  */
 
 /* Purple GitHub contribution graphs! */
-.js-calendar-graph-svg, .legend {
+.js-calendar-graph-svg, .contrib-legend .legend {
   -webkit-filter: hue-rotate(180deg);
 }
 
