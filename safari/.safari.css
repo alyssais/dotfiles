@@ -10,7 +10,7 @@
 
 /* Purple GitHub contribution graphs! */
 .js-calendar-graph-svg, .contrib-legend .legend {
-  -webkit-filter: hue-rotate(180deg);
+  filter: hue-rotate(180deg);
 }
 
 /* Fix overflow scrolling on TopHat. */
