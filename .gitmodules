@@ -13,3 +13,12 @@
 [submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/sass-textmate-bundle"]
 	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/sass-textmate-bundle
 	url = https://github.com/nathos/sass-textmate-bundle
+[submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/GitGutter"]
+	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/GitGutter
+	url = git://github.com/jisaacks/GitGutter.git
+[submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/Cappuccino-Sublime"]
+	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/Cappuccino-Sublime
+	url = git://github.com/aparajita/Cappuccino-Sublime.git
+[submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/sublime-better-coffeescript"]
+	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/sublime-better-coffeescript
+	url = https://github.com/aponxi/sublime-better-coffeescript
