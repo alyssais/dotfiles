@@ -28,3 +28,9 @@
 	gpgsign = true
 [help]
 	autocorrect = 1
+[transfer]
+  fsckobjects = true
+[fetch]
+  fsckobjects = true
+[receive]
+  fsckObjects = true
