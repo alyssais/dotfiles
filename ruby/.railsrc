@@ -1,1 +1,1 @@
---database postgresql --skip-test-unit
+--database postgresql
