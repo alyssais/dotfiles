@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+. "$(dirname $0)/../shell/env"
+. $XDG_CONFIG_HOME/shell/aliases
+

@@ -1,0 +1,63 @@
+#!/usr/bin/env zsh
+
+. $XDG_CONFIG_HOME/shell/aliases
+. $XDG_CONFIG_HOME/zsh/opts
+
+autoload -Uz colors && colors
+
+zstyle ':completion::complete:*' use-cache on
+zstyle ':completion::complete:*' cache-path "$XDG_CACHE_DIR/zsh/zcompcache"
+zstyle ':completion:*' auto-description '%d'
+zstyle ':completion:*' completer _expand _complete _ignored _match _correct \
+                       _approximate _prefix
+zstyle ':completion:*' expand suffix
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' insert-unambiguous true
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-suffixes true
+zstyle ':completion:*' matcher-list \
+  'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' \
+  'r:|[._-/]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' original false
+zstyle ':completion:*' preserve-prefix '//[^/]##/'
+zstyle ':completion:*' select-prompt \
+  %SScrolling active: current selection at %p%s
+zstyle ':completion:*' squeeze-slashes true
+zstyle ':completion:*' use-compctl true
+zstyle ':completion:*' verbose true
+
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+
+# compaudit doesn't take into account that I might want to manage completions
+# through a trusted group.
+autoload -Uz compinit
+local compaudit_dirs=$(compaudit 2>&1 | tail -n +2)
+local ok_pattern='^........-. \d+ root brew'
+if [ -n "$compaudit_dirs" ] && ls -ld $compaudit_dirs | ag -v $ok_pattern; then
+  echo "compaudit detected insecure directories."
+else
+  compinit -u -d "$XDG_CACHE_HOME/zsh/zcompdump"
+fi
+
+REPORTTIME=5
+
+insert_sudo () { zle beginning-of-line; zle -U "sudo " }
+zle -N insert-sudo insert_sudo
+bindkey "^[s" insert-sudo
+
+load_from_brew() {
+  . "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  . "$(brew --prefix zsh-history-substring-search)/zsh-history-substring-search.zsh"
+  . "$(brew --prefix zsh-git-prompt)/zshrc.sh"
+}
+
+load_from_brew || (brew bundle --file="$ZDOTDIR/Brewfile" && load_from_brew)
+
+export PROMPT='%B%n@%m %2~%b %# '
+export RPROMPT='$(git_super_status)'
+
+zmodload zsh/terminfo
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down

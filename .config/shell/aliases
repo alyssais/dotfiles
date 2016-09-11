@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# Disable silver searcher numbers when piped or redirected.
+ag() {
+  if [[ ! -t 1 ]]; then
+    command ag --no-numbers $@
+  else
+    command ag $@
+  fi
+}
+
+alias curl="noglob curl"
+alias dig="noglob dig"
+alias find="noglob find"
+
+if command -v hub > /dev/null 2>&1; then
+  alias git="noglob hub"
+else
+  alias git="noglob git"
+fi
+
+if [[ "$(hostname)" = baltoy.alyssa.is ]]; then
+  alias irssi="screen -R irssi irssi --home $XDG_CONFIG_HOME/irssi"
+else
+  alias irssi="ssh -t alyssa@baltoy.alyssa.is screen -R irssi irssi --home $XDG_CONFIG_HOME/irssi"
+fi
+
+alias ls="ls -AF --si --color=auto"
+
+# Define a noglob function for bash that doesn't do anything.
+command -v noglob > /dev/null 2>&1 || alias noglob=
+
+alias wget="noglob wget"
+alias vim=nvim

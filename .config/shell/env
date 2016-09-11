@@ -1,0 +1,42 @@
+#!/bin/sh
+
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export PATH="/usr/local/games"
+export PATH="/usr/games:$PATH"
+export PATH="/bin:$PATH"
+export PATH="/sbin:$PATH"
+export PATH="/usr/bin:$PATH"
+export PATH="/usr/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+if [ "$(uname)" != "Darwin" ]; then
+  export PATH="/opt/linuxbrew/sbin:$PATH"
+  export PATH="/opt/linuxbrew/bin:$PATH"
+fi
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+export HISTFILE="$XDG_DATA_HOME/$(basename $SHELL)/history"
+export HISTSIZE=10000
+
+export LESSHISTFILE="$XDG_DATA_HOME/less/history"
+export LESS="R"
+
+if command -v nvim > /dev/null 2>&1; then
+  export EDITOR=nvim
+  export VISUAL=nvim
+fi
+
+if [ "$(uname)" != "Darwin" ]; then
+  export HOMEBREW_CACHE=/var/cache/linuxbrew
+  export HOMEBREW_LOGS=/var/log/linuxbrew
+fi
+export HOMEBREW_BUILD_FROM_SOURCE=1
+export HOMEBREW_DEVELOPER=1
+
+export GEMRC="$XDG_CONFIG_HOME/gem/config"
+export GEM_HOME="/usr/local/gem"
+export GEM_SPEC_CACHE="/var/cache/gem/specs"

@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+. "$(dirname $0)/../shell/env"
+
+export SAVEHIST=$(( $HISTSIZE * 9 / 10 ))
+export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
