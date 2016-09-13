@@ -19,6 +19,8 @@ fi
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+export CLICOLOR=1
+
 export HISTFILE="$XDG_DATA_HOME/$(basename $SHELL)/history"
 export HISTSIZE=10000
 

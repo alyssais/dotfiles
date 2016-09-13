@@ -25,7 +25,13 @@ else
   alias irssi="ssh -t alyssa@baltoy.alyssa.is screen -R irssi irssi --home $XDG_CONFIG_HOME/irssi"
 fi
 
-alias ls="ls -AF --si --color=auto"
+if ls --color -d > /dev/null 2>&1; then
+  # GNU ls
+  alias ls="ls -AF --si --color=auto"
+else
+  # Other ls, probably BSD
+  alias ls="ls -AFh"
+fi
 
 # Define a noglob function for bash that doesn't do anything.
 command -v noglob > /dev/null 2>&1 || alias noglob=
