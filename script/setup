@@ -1,2 +1,23 @@
+# Install dotfiles
 git --work-tree=$HOME --git-dir=$HOME/dotfiles/.git checkout .
 rm -r "$HOME/script"
+
+# Set up Sublime Text on macOS
+if [ "$(uname)" == "Darwin" ]
+then
+
+  local sublime_path="$USER/Library/Application Support/Sublime Text 3"
+
+  # Install Sublime Package Control
+  mkdir -p "$sublime_path/Installed Packages"
+  curl "https://packagecontrol.io/Package%20Control.sublime-package" \
+    -o "$sublime_path/Installed Packages/Package Control.sublime-package"
+
+  # Set up Sublime user settings.
+  mkdir -p "$sublime_path/Packages/User"
+  cd "$sublime_path/Packages/User"
+  git init
+  git remote add origin "git@github.com:$STRAP_GITHUB_USER/sublime-settings"
+  git pull
+
+fi
