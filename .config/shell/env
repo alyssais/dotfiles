@@ -42,3 +42,5 @@ export HOMEBREW_DEVELOPER=1
 export GEMRC="$XDG_CONFIG_HOME/gem/config"
 export GEM_HOME="/usr/local/gem"
 export GEM_SPEC_CACHE="/var/cache/gem/specs"
+
+export SPEC_OPTS="--color"

@@ -61,3 +61,7 @@ export RPROMPT='$(git_super_status)'
 zmodload zsh/terminfo
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
+
+source "$(brew --prefix chruby)/share/chruby/chruby.sh"
+source "$(brew --prefix chruby)/share/chruby/auto.sh"
+chruby "$(< "$XDG_CONFIG_HOME/chruby/version")"
