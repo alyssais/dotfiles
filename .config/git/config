@@ -1,0 +1,48 @@
+# This is Git's per-user configuration file.
+[core]
+	excludesfile = ~/.config/git/ignore
+	pager = diff-so-fancy | less --tabs=4
+[user]
+	name = Alyssa Ross
+	email = hi@alyssa.is
+[alias]
+	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+	pull-request = pull-request -o
+	normal-log = log
+	log = "log --graph --show-notes=\"*\" --abbrev-commit --pretty=format:'%Cred%h %Cgreen(%ar)%Creset -%C(bold red)%d%Creset %s %C(bold blue)<%an>%Creset'"
+[push]
+	default = current
+[merge]
+	conflictstyle = diff3
+	tool = opendiff
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[commit]
+	gpgsign = false
+[help]
+	autocorrect = 1
+[transfer]
+	fsckobjects = true
+[fetch]
+	fsckobjects = true
+[receive]
+	fsckObjects = true
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	required = true
+	clean = git-lfs clean -- %f
+[diff]
+	compactionHeuristic = true
+[diff-so-fancy]
+	markEmptyLines = false
