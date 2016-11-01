@@ -1,12 +1,28 @@
+#!/bin/bash
+
+cd "$HOME"
+
 # Install dotfiles
-git --work-tree=$HOME --git-dir=$HOME/dotfiles/.git checkout .
-rm -r "$HOME/script"
+git="git --work-tree=$HOME --git-dir=$HOME/dotfiles/.git"
+$git checkout .
+$git ls-files | grep -v '^\.' | cut -d '/' -f 1 | sort | uniq | xargs rm -r
+
+# Install terminal theme on macOS
+if [ "$(uname)" == "Darwin" ]
+then
+
+  cd $(mktemp)
+
+  git clone "git@github.com:$STRAP_GITHUB_USER/terminal" .
+  "$(basename "$0")"/install_terminal_theme "$STRAP_GITHUB_USER.terminal"
+
+fi
 
 # Set up Sublime Text on macOS
 if [ "$(uname)" == "Darwin" ]
 then
 
-  local sublime_path="$USER/Library/Application Support/Sublime Text 3"
+  local sublime_path="$HOME/Library/Application Support/Sublime Text 3"
 
   # Install Sublime Package Control
   mkdir -p "$sublime_path/Installed Packages"
