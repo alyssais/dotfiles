@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ue
+
 cd "$HOME"
 
 # Install dotfiles
@@ -37,3 +39,6 @@ then
   git pull
 
 fi
+
+mkdir "$HOME/code"
+mv "$HOME/.dotfiles" "$HOME/code/dotfiles"
