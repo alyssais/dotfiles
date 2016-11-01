@@ -1,0 +1,2 @@
+git --work-tree=$HOME --git-dir=$HOME/dotfiles/.git checkout .
+rm -r "$HOME/script"
