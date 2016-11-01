@@ -1,0 +1,24 @@
+[submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/emmet-sublime"]
+	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/emmet-sublime
+	url = git://github.com/sergeche/emmet-sublime.git
+[submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/editorconfig-sublime"]
+	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/editorconfig-sublime
+	url = git://github.com/sindresorhus/editorconfig-sublime.git
+[submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/SideBarEnhancements"]
+	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/SideBarEnhancements
+	url = git://github.com/titoBouzout/SideBarEnhancements.git
+[submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/Theme - Spacegray"]
+	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/Theme - Spacegray
+	url = git://github.com/kkga/spacegray.git
+[submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/sass-textmate-bundle"]
+	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/sass-textmate-bundle
+	url = https://github.com/nathos/sass-textmate-bundle
+[submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/GitGutter"]
+	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/GitGutter
+	url = git://github.com/jisaacks/GitGutter.git
+[submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/Cappuccino-Sublime"]
+	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/Cappuccino-Sublime
+	url = git://github.com/aparajita/Cappuccino-Sublime.git
+[submodule "sublime-text/Library/Application Support/Sublime Text 3/Packages/sublime-better-coffeescript"]
+	path = sublime-text/Library/Application Support/Sublime Text 3/Packages/sublime-better-coffeescript
+	url = https://github.com/aponxi/sublime-better-coffeescript
