@@ -11,6 +11,7 @@ ag() {
 
 alias curl="noglob curl"
 alias dig="noglob dig"
+alias dfgit="git --work-tree=$HOME --git-dir=$HOME/code/.dotfiles.git"
 alias find="noglob find"
 
 if command -v hub > /dev/null 2>&1; then
