@@ -46,3 +46,5 @@
 	compactionHeuristic = true
 [diff-so-fancy]
 	markEmptyLines = false
+[credential]
+	helper = osxkeychain
