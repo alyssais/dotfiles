@@ -38,7 +38,7 @@ local ok_pattern='^........-. \d+ root brew'
 if [ -n "$compaudit_dirs" ] && ls -ld $compaudit_dirs | ag -v $ok_pattern; then
   echo "compaudit detected insecure directories."
 else
-  (compinit -u -d "$XDG_CACHE_HOME/zsh/zcompdump" &) 2> /dev/null
+  compinit -u -d "$XDG_CACHE_HOME/zsh/zcompdump"
 fi
 
 REPORTTIME=5
@@ -77,6 +77,8 @@ then
   # doesn't have the keychain functionality.
   (/usr/bin/ssh-add -K &) 2> /dev/null
 fi
+
+eval "$(brew command-not-found-init)"
 
 source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh"
 source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh"
