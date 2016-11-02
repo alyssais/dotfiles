@@ -2,21 +2,21 @@
 
 set -ue
 
-cd "$HOME"
-
 # Install dotfiles
-git="git --work-tree=$HOME --git-dir=$HOME/dotfiles/.git"
+git="git --work-tree=$HOME --git-dir=$PWD/$(dirname "$0")/../.git"
+pushd "$HOME"
 $git checkout .
 $git ls-files | grep -v '^\.' | cut -d '/' -f 1 | sort | uniq | xargs rm -r
+popd
 
 # Install terminal theme on macOS
 if [ "$(uname)" == "Darwin" ]
 then
 
-  cd $(mktemp)
+  dir="$(mktemp -d)"
 
-  git clone "git@github.com:$STRAP_GITHUB_USER/terminal" .
-  "$(basename "$0")"/install_terminal_theme "$STRAP_GITHUB_USER.terminal"
+  git clone https://github.com/alyssais/terminal.git "$dir"
+  "$PWD/$(dirname "$0")"/install_terminal_theme "$dir/alyssais.terminal"
 
 fi
 
@@ -24,21 +24,30 @@ fi
 if [ "$(uname)" == "Darwin" ]
 then
 
-  local sublime_path="$HOME/Library/Application Support/Sublime Text 3"
+  sublime_path="$HOME/Library/Application Support/Sublime Text 3"
 
   # Install Sublime Package Control
   mkdir -p "$sublime_path/Installed Packages"
   curl "https://packagecontrol.io/Package%20Control.sublime-package" \
     -o "$sublime_path/Installed Packages/Package Control.sublime-package"
 
+  # Install Smyck color scheme
+  git clone https://github.com/hukl/Smyck-Color-Scheme.git \
+    "$sublime_path/Packages/Smyck-Color-Scheme"
+
   # Set up Sublime user settings.
   mkdir -p "$sublime_path/Packages/User"
   cd "$sublime_path/Packages/User"
   git init
-  git remote add origin "git@github.com:$STRAP_GITHUB_USER/sublime-settings"
-  git pull
+  git remote rm origin || true
+  git remote add origin https://github.com/alyssais/sublime-settings.git
+  git pull origin master
 
 fi
 
-mkdir "$HOME/code"
-mv "$HOME/.dotfiles" "$HOME/code/dotfiles"
+if ! [ -d "$HOME/code/dotfiles" ]
+then
+  mkdir "$HOME/code"
+  mv "$HOME/.dotfiles/.git" "$HOME/code/.dotfiles.git"
+  rm -r "$HOME/.dotfiles"
+fi
