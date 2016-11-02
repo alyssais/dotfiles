@@ -38,7 +38,7 @@ local ok_pattern='^........-. \d+ root brew'
 if [ -n "$compaudit_dirs" ] && ls -ld $compaudit_dirs | ag -v $ok_pattern; then
   echo "compaudit detected insecure directories."
 else
-  compinit -u -d "$XDG_CACHE_HOME/zsh/zcompdump"
+  (compinit -u -d "$XDG_CACHE_HOME/zsh/zcompdump" &) 2> /dev/null
 fi
 
 REPORTTIME=5
@@ -48,10 +48,13 @@ zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 bindkey -e
 
+# Cache this, because it's quite slow.
+HOMEBREW_PREFIX=$(brew --prefix)
+
 load_from_brew() {
-  . "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-  . "$(brew --prefix zsh-history-substring-search)/zsh-history-substring-search.zsh"
-  . "$(brew --prefix zsh-git-prompt)/zshrc.sh"
+  . "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  . "$HOMEBREW_PREFIX/opt/zsh-history-substring-search/zsh-history-substring-search.zsh"
+  . "$HOMEBREW_PREFIX/opt/zsh-git-prompt/zshrc.sh"
 }
 
 load_from_brew || (brew bundle --file="$ZDOTDIR/Brewfile" && load_from_brew)
@@ -72,9 +75,9 @@ then
   # Load SSH passphrases from the Keychain.
   # Use an explicit path because Homebrew OpenSSH
   # doesn't have the keychain functionality.
-  /usr/bin/ssh-add -K 2> /dev/null
+  (/usr/bin/ssh-add -K &) 2> /dev/null
 fi
 
-source "$(brew --prefix chruby)/share/chruby/chruby.sh"
-source "$(brew --prefix chruby)/share/chruby/auto.sh"
+source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh"
+source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh"
 chruby "$(< "$XDG_CONFIG_HOME/chruby/version")"
