@@ -1,3 +1,3 @@
 brew 'zsh-syntax-highlighting'
 brew 'zsh-history-substring-search'
-brew 'penman/core/zsh-git-prompt'
+brew 'liquidprompt'

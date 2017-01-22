@@ -54,13 +54,10 @@ HOMEBREW_PREFIX=$(brew --prefix)
 load_from_brew() {
   . "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
   . "$HOMEBREW_PREFIX/opt/zsh-history-substring-search/zsh-history-substring-search.zsh"
-  . "$HOMEBREW_PREFIX/opt/zsh-git-prompt/zshrc.sh"
+  . "$HOMEBREW_PREFIX/opt/liquidprompt/share/liquidprompt"
 }
 
 load_from_brew || (brew bundle --file="$ZDOTDIR/Brewfile" && load_from_brew)
-
-export PROMPT='%B%n@%m %2~%b %# '
-export RPROMPT='$(git_super_status)'
 
 zmodload zsh/terminfo
 bindkey "^[[A" history-substring-search-up
