@@ -40,6 +40,7 @@ if [ "$(uname)" != "Darwin" ]; then
 fi
 export HOMEBREW_BUILD_FROM_SOURCE=1
 export HOMEBREW_DEVELOPER=1
+export BINTRAY_USER="alyssais"
 
 export GEMRC="$XDG_CONFIG_HOME/gem/config"
 export GEM_HOME="/usr/local/gem"
@@ -48,3 +49,5 @@ export GEM_SPEC_CACHE="/var/cache/gem/specs"
 export PRYRC="$XDG_CONFIG_HOME/pry/rc"
 
 export SPEC_OPTS="--color"
+
+. "$(basename .)/env.private"
