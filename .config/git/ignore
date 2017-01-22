@@ -8,3 +8,6 @@ sublime-workspace
 # IntelliJ IDEA
 .idea
 *.iml
+
+# Bundler
+gem_graph.png
