@@ -37,7 +37,6 @@ fi
 # Define a noglob function for bash that doesn't do anything.
 command -v noglob > /dev/null 2>&1 || alias noglob=
 
-alias rails="rails --rc $XDG_CONFIG_HOME/rails/rc"
 alias ruby-install="ruby-install -c"
 alias wget="noglob wget"
 alias vim=nvim
