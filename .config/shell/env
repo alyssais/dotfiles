@@ -54,4 +54,6 @@ export SPEC_OPTS="--color"
 
 export TRAVIS_CONFIG_PATH="$XDG_DATA_HOME/travis"
 
+export HTTPIE_CONFIG_DIR="$XDG_CONFIG_HOME/httpie"
+
 . "$(dirname $0)/env.private"
