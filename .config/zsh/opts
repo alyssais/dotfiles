@@ -5,7 +5,7 @@ setopt always_to_end auto_name_dirs complete_in_word list_packed
 
 ### Expansion and Globbing
 setopt bad_pattern brace_ccl extended_glob equals glob_star_short \
-       magic_equal_subst rc_expand_param rematch_pcre warn_create_global
+       magic_equal_subst rc_expand_param rematch_pcre
 
 ### Input/Output
 setopt correct_all mail_warning print_exit_value rc_quotes rm_star_wait \
