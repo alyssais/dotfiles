@@ -74,7 +74,7 @@ then
   (/usr/bin/ssh-add -K &) 2> /dev/null
 fi
 
-eval "$(brew command-not-found-init)"
+eval "$(brew command-not-found-init 2> /dev/null)"
 
 source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh"
 source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh"
