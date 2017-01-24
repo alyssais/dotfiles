@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [core]
 	excludesfile = ~/.config/git/ignore
-	pager = diff-so-fancy | less --tabs=4
+	pager = (command -v diff-so-fancy || brew install diff-so-fancy > /dev/tty) && diff-so-fancy | less --tabs=4
 [user]
 	name = Alyssa Ross
 	email = hi@alyssa.is
