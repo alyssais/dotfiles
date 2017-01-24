@@ -43,6 +43,7 @@ export HOMEBREW_DEVELOPER=1
 export BINTRAY_USER="alyssais"
 
 export GEMRC="$XDG_CONFIG_HOME/gem/config"
+
 if [ "$(uname)" != "Darwin" ]; then
   export GEM_HOME="/usr/local/gem"
   export GEM_SPEC_CACHE="/var/cache/gem/specs"
@@ -55,5 +56,7 @@ export SPEC_OPTS="--color"
 export TRAVIS_CONFIG_PATH="$XDG_DATA_HOME/travis"
 
 export HTTPIE_CONFIG_DIR="$XDG_CONFIG_HOME/httpie"
+
+export SUBVERSION_HOME="$XDG_CONFIG_HOME/subversion"
 
 . "$(dirname $0)/env.private"
