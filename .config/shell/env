@@ -28,7 +28,7 @@ export HISTSIZE=10000
 export NLTK_DATA="$XDG_DATA_HOME/nltk"
 
 export LESSHISTFILE="$XDG_DATA_HOME/less/history"
-export LESS="R"
+export LESS="RS" # color, don't wrap
 
 if command -v nvim > /dev/null 2>&1; then
   export EDITOR=nvim
