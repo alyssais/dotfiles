@@ -20,10 +20,11 @@ else
   alias git="noglob git"
 fi
 
+screen_command="screen -RR irssi 'command irssi --home \$XDG_CONFIG_HOME/irssi'"
 if [[ "$(hostname)" = baltoy.alyssa.is ]]; then
-  alias irssi="screen -R irssi irssi --home $XDG_CONFIG_HOME/irssi"
+  alias irssi="$screen_command"
 else
-  alias irssi="ssh -t alyssa@baltoy.alyssa.is screen -R irssi irssi --home $XDG_CONFIG_HOME/irssi"
+  alias irssi="ssh -t alyssa@baltoy.alyssa.is "$screen_command
 fi
 
 if ls --color -d > /dev/null 2>&1; then
