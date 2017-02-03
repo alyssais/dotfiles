@@ -20,11 +20,12 @@ else
   alias git="noglob git"
 fi
 
-screen_command="screen -RR irssi 'command irssi --home \$XDG_CONFIG_HOME/irssi'"
+screen_command="screen -c '\$XDG_CONFIG_HOME/screen/config'"
+irssi_command="$screen_command -RR irssi 'command irssi --home \$XDG_CONFIG_HOME/irssi'"
 if [[ "$(hostname)" = baltoy.alyssa.is ]]; then
-  alias irssi="$screen_command"
+  alias irssi="$irssi_command"
 else
-  alias irssi="ssh -t alyssa@baltoy.alyssa.is "$screen_command
+  alias irssi="ssh -t alyssa@baltoy.alyssa.is "$irssi_command
 fi
 
 if ls --color -d > /dev/null 2>&1; then
@@ -38,6 +39,7 @@ fi
 # Define a noglob function for bash that doesn't do anything.
 command -v noglob > /dev/null 2>&1 || alias noglob=
 
+alias screen="$screen_command"
 alias ruby-install="ruby-install -c"
 alias wget="noglob wget"
 alias vim=nvim
