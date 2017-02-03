@@ -15,6 +15,7 @@ export PATH="/usr/local/sbin:$PATH"
 if [ "$(uname)" != "Darwin" ]; then
   export PATH="/opt/linuxbrew/sbin:$PATH"
   export PATH="/opt/linuxbrew/bin:$PATH"
+  export PATH="/usr/local/gem/bin:$PATH"
 fi
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
