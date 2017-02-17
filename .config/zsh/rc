@@ -76,6 +76,10 @@ fi
 
 eval "$(brew command-not-found-init 2> /dev/null)"
 
+if command -v direnv > /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
 if [ -d "$HOMEBREW_PREFIX/opt/chruby" ]; then
   source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh"
   source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh"

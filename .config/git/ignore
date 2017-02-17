@@ -11,3 +11,6 @@ sublime-workspace
 
 # Bundler
 gem_graph.png
+
+# Direnv
+.envrc
