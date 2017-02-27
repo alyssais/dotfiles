@@ -8,8 +8,7 @@ setopt bad_pattern brace_ccl extended_glob equals glob_star_short \
        magic_equal_subst rc_expand_param rematch_pcre
 
 ### Input/Output
-setopt correct_all mail_warning print_exit_value rc_quotes rm_star_wait \
-       short_loops
+setopt correct_all mail_warning rc_quotes rm_star_wait short_loops
 
 ### History
 setopt share_history bang_hist hist_allow_clobber hist_beep \
