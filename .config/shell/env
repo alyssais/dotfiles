@@ -12,6 +12,9 @@ export PATH="/usr/bin:$PATH"
 export PATH="/usr/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+if command -v yarn > /dev/null; then
+  export PATH="$(yarn global bin):$PATH"
+fi
 if [ "$(uname)" != "Darwin" ]; then
   export PATH="/opt/linuxbrew/sbin:$PATH"
   export PATH="/opt/linuxbrew/bin:$PATH"
