@@ -62,4 +62,4 @@ export SUBVERSION_HOME="$XDG_CONFIG_HOME/subversion"
 
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/repl_history"
 
-. "$(dirname $0)/env.private"
+. "$XDG_CONFIG_HOME/shell/env.private"

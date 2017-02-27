@@ -7,6 +7,6 @@ fi
 
 # User specific environment and startup programs
 
-. "$(dirname $0)/../shell/env"
-. $XDG_CONFIG_HOME/shell/aliases
+. "$HOME/.config/shell/env"
+. "$XDG_CONFIG_HOME/shell/aliases"
 
