@@ -42,3 +42,5 @@
 	helper = osxkeychain
 [hub]
 	protocol = ssh
+[branch]
+	autosetuprebase = always
