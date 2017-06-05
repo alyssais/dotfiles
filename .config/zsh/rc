@@ -63,8 +63,9 @@ zmodload zsh/terminfo
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
-# Fix delete key
 bindkey "^[[3~" delete-char
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
 
 if [ "$(uname -s)" = "Darwin" ]
 then
