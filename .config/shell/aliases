@@ -9,6 +9,7 @@ ag() {
   fi
 }
 
+alias cargo="noglob cargo"
 alias curl="noglob curl"
 alias dig="noglob dig"
 alias dfgit="git --work-tree=$HOME --git-dir=$HOME/code/.dotfiles.git"
