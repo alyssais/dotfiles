@@ -40,3 +40,5 @@
 	compactionHeuristic = true
 [credential]
 	helper = osxkeychain
+[hub]
+	protocol = ssh
