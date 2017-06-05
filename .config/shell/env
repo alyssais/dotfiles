@@ -13,7 +13,7 @@ export PATH="/usr/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 if command -v yarn > /dev/null; then
-  export PATH="$(yarn global bin):$PATH"
+  export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 fi
 if [ "$(uname)" != "Darwin" ]; then
   export PATH="/opt/linuxbrew/sbin:$PATH"
@@ -22,6 +22,7 @@ if [ "$(uname)" != "Darwin" ]; then
 fi
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export CLICOLOR=1
 
