@@ -15,6 +15,7 @@ alias curl="noglob curl"
 alias dig="noglob dig"
 alias dfgit="git --work-tree=$HOME --git-dir=$HOME/code/.dotfiles.git"
 alias find="noglob find"
+alias http="noglob http"
 
 if command -v hub > /dev/null 2>&1; then
   alias git="noglob hub"
