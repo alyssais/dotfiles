@@ -53,7 +53,7 @@ HOMEBREW_PREFIX=$(brew --prefix)
 
 load_from_brew() {
   . "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-  . "$HOMEBREW_PREFIX/opt/zsh-history-substring-search/zsh-history-substring-search.zsh"
+  . "$HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
   . "$HOMEBREW_PREFIX/opt/liquidprompt/share/liquidprompt"
 }
 
