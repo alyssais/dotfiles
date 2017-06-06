@@ -32,8 +32,12 @@ then
     -o "$sublime_path/Installed Packages/Package Control.sublime-package"
 
   # Install Smyck color scheme
-  git clone https://github.com/hukl/Smyck-Color-Scheme.git \
-    "$sublime_path/Packages/Smyck-Color-Scheme"
+  mkdir -p "$sublime_path/Packages/Smyck-Color-Scheme"
+  cd "$sublime_path/Packages/Smyck-Color-Scheme"
+  git init
+  git remote rm origin || true
+  git remote add origin https://github.com/hukl/Smyck-Color-Scheme.git
+  git pull origin master
 
   # Set up Sublime user settings.
   mkdir -p "$sublime_path/Packages/User"
@@ -47,7 +51,7 @@ fi
 
 if ! [ -d "$HOME/code/dotfiles" ]
 then
-  mkdir "$HOME/code"
+  mkdir -p "$HOME/code"
   mv "$HOME/.dotfiles/.git" "$HOME/code/.dotfiles.git"
   rm -r "$HOME/.dotfiles"
 fi
