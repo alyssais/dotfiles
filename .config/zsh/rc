@@ -72,7 +72,7 @@ then
   # Load SSH passphrases from the Keychain.
   # Use an explicit path because Homebrew OpenSSH
   # doesn't have the keychain functionality.
-  (/usr/bin/ssh-add -K &) 2> /dev/null
+  (/usr/bin/ssh-add -A &) 2> /dev/null
 fi
 
 eval "$(brew command-not-found-init 2> /dev/null)"
