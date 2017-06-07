@@ -69,7 +69,7 @@ LP_ENABLE_JOBS=1
 
 # Do you want to use the load feature?
 # Recommended value is 1
-LP_ENABLE_LOAD=1
+LP_ENABLE_LOAD=0
 
 # Do you want to use the battery feature?
 # Recommended value is 1
