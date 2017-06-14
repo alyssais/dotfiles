@@ -8,7 +8,7 @@
 [alias]
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	pull-request = pull-request -o
-	normal-log = log
+	longlog = log
 	log = "log --graph --show-notes=\"*\" --abbrev-commit --pretty=format:'%Cred%h %Cgreen(%ar)%Creset -%C(bold red)%d%Creset %s %C(bold blue)<%an>%Creset'"
 [push]
 	default = current
