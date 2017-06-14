@@ -47,6 +47,8 @@ export HOMEBREW_BUILD_FROM_SOURCE=1
 export HOMEBREW_DEVELOPER=1
 export BINTRAY_USER="alyssais"
 
+export BUNDLER_EDITOR="subl"
+
 export GEMRC="$XDG_CONFIG_HOME/gem/config"
 
 if [ "$(uname)" != "Darwin" ]; then
