@@ -30,6 +30,7 @@
 	untracked = cyan
 [commit]
 	gpgsign = false
+	verbose = true
 [help]
 	autocorrect = 1
 [filter "lfs"]
