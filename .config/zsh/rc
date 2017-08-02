@@ -79,7 +79,8 @@ _try_import_apple_bash_function() {
 _try_import_apple_bash_function update_terminal_cwd
 
 # Cache this, because it's quite slow.
-HOMEBREW_PREFIX=$(brew --prefix)
+HOMEBREW_PREFIX="$(brew --prefix)"
+HOMEBREW_REPO="$(brew --repo)"
 
 load_from_brew() {
   . "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
@@ -105,7 +106,11 @@ then
   (/usr/bin/ssh-add -A &) 2> /dev/null
 fi
 
-eval "$(brew command-not-found-init 2> /dev/null)"
+homebrew_taps_dir="$HOMEBREW_REPO/Library/Taps"
+command_not_found_repo="$homebrew_taps_dir/homebrew/homebrew-command-not-found"
+if [ -d "$command_not_found_repo" ]; then
+  . "$command_not_found_repo/handler.sh"
+fi
 
 if command -v direnv > /dev/null; then
   eval "$(direnv hook zsh)"
