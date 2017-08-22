@@ -128,3 +128,7 @@ if [ -d "$HOMEBREW_PREFIX/opt/chruby" ]; then
   source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh"
   chruby "$(< "$XDG_CONFIG_HOME/chruby/version")"
 fi
+
+if [ -d "$HOMEBREW_PREFIX/opt/fzf" ]; then
+  source "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
+fi
