@@ -24,6 +24,12 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+if command -v brew > /dev/null; then
+  # Cache this, because it's quite slow.
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  HOMEBREW_REPO="$(brew --repo)"
+fi
+
 export CLICOLOR=1
 
 export HISTFILE="$XDG_DATA_HOME/$(basename $SHELL)/history"
@@ -67,5 +73,9 @@ export HTTPIE_CONFIG_DIR="$XDG_CONFIG_HOME/httpie"
 export SUBVERSION_HOME="$XDG_CONFIG_HOME/subversion"
 
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/repl_history"
+
+if [ -n "$HOMEBREW_PREFIX" ]; then
+  export PYTHONPATH="$HOMEBREW_PREFIX/lib/python2.7/site-packages"
+fi
 
 . "$XDG_CONFIG_HOME/shell/env.private"
