@@ -1,5 +1,6 @@
 # This is Git's per-user configuration file.
 [core]
+	attributesfile = ~/.config/git/attributes
 	excludesfile = ~/.config/git/ignore
 	pager = (command -v diff-so-fancy > /dev/null || brew install diff-so-fancy > /dev/tty) && diff-so-fancy | less --tabs=4
 [user]
@@ -46,3 +47,5 @@
 	protocol = ssh
 [branch]
 	autosetuprebase = always
+[diff "plist"]
+	textconv = plutil -convert xml1 -o -
