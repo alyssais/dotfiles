@@ -91,6 +91,8 @@ if [ -n "$HOMEBREW_PREFIX" ]; then
   export PYTHONPATH="$HOMEBREW_PREFIX/lib/python2.7/site-packages"
 fi
 
+export FZF_CTRL_T_COMMAND='git ls-files || find .'
+
 if [ -f "$XDG_CONFIG_HOME/shell/env.private" ]; then
   . "$XDG_CONFIG_HOME/shell/env.private"
 fi
