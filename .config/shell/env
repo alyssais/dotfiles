@@ -61,6 +61,11 @@ export HOMEBREW_BUILD_FROM_SOURCE=1
 export HOMEBREW_DEVELOPER=1
 export BINTRAY_USER="alyssais"
 
+if [ -d "$HOMEBREW_PREFIX/opt/chruby" ]; then
+  source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh"
+  chruby "$(< "$XDG_CONFIG_HOME/chruby/version")"
+fi
+
 export BUNDLER_EDITOR="subl"
 
 export GEMRC="$XDG_CONFIG_HOME/gem/config"
