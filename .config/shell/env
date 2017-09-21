@@ -27,6 +27,11 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+export GNUPGHOME="$HOME/.gnupg"
+if command -v gpg-agent > /dev/null; then
+  export SSH_AUTH_SOCK="$GNUPGHOME/S.gpg-agent.ssh"
+fi
+
 if command -v brew > /dev/null; then
   # Cache this, because it's quite slow.
   HOMEBREW_PREFIX="$(brew --prefix)"
