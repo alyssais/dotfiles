@@ -3,6 +3,9 @@
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
+if [ -z "$XDG_RUNTIME_DIR" ]; then
+  export XDG_RUNTIME_DIR="$TMPDIR"
+fi
 
 export PATH="/usr/local/games"
 export PATH="/usr/games:$PATH"
