@@ -38,6 +38,23 @@ if command -v brew > /dev/null; then
   HOMEBREW_REPO="$(brew --repo)"
 fi
 
+if [ "$(uname)" != "Darwin" ]; then
+  export HOMEBREW_CACHE=/var/cache/linuxbrew
+  export HOMEBREW_LOGS=/var/log/linuxbrew
+fi
+export HOMEBREW_BUILD_FROM_SOURCE=1
+export HOMEBREW_DEVELOPER=1
+export BINTRAY_USER="alyssais"
+
+if [ -d "$HOMEBREW_PREFIX/opt/chruby" ]; then
+  source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh"
+  chruby "$(< "$XDG_CONFIG_HOME/chruby/version")"
+fi
+
+if [ -n "$HOMEBREW_PREFIX" ]; then
+  export PYTHONPATH="$HOMEBREW_PREFIX/lib/python2.7/site-packages"
+fi
+
 export CLICOLOR=1
 
 export HISTFILE="$XDG_DATA_HOME/$(basename $SHELL)/history"
@@ -51,19 +68,6 @@ export LESS="RS" # color, don't wrap
 if command -v kak > /dev/null 2>&1; then
   export EDITOR=kak
   export VISUAL=kak
-fi
-
-if [ "$(uname)" != "Darwin" ]; then
-  export HOMEBREW_CACHE=/var/cache/linuxbrew
-  export HOMEBREW_LOGS=/var/log/linuxbrew
-fi
-export HOMEBREW_BUILD_FROM_SOURCE=1
-export HOMEBREW_DEVELOPER=1
-export BINTRAY_USER="alyssais"
-
-if [ -d "$HOMEBREW_PREFIX/opt/chruby" ]; then
-  source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh"
-  chruby "$(< "$XDG_CONFIG_HOME/chruby/version")"
 fi
 
 export BUNDLER_EDITOR="subl"
@@ -86,10 +90,6 @@ export HTTPIE_CONFIG_DIR="$XDG_CONFIG_HOME/httpie"
 export SUBVERSION_HOME="$XDG_CONFIG_HOME/subversion"
 
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/repl_history"
-
-if [ -n "$HOMEBREW_PREFIX" ]; then
-  export PYTHONPATH="$HOMEBREW_PREFIX/lib/python2.7/site-packages"
-fi
 
 export FZF_CTRL_T_COMMAND='git ls-files || find .'
 
