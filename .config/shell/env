@@ -44,6 +44,7 @@ if [ "$(uname)" != "Darwin" ]; then
 fi
 export HOMEBREW_BUILD_FROM_SOURCE=1
 export HOMEBREW_DEVELOPER=1
+export HOMEBREW_VERBOSE=1
 export BINTRAY_USER="alyssais"
 
 if [ -d "$HOMEBREW_PREFIX/opt/chruby" ]; then
