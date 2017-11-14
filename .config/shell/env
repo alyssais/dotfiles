@@ -92,7 +92,7 @@ export SUBVERSION_HOME="$XDG_CONFIG_HOME/subversion"
 
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/repl_history"
 
-export FZF_CTRL_T_COMMAND='git ls-files || find .'
+export FZF_CTRL_T_COMMAND='(git ls-files | uniq) || find .'
 
 if [ -f "$XDG_CONFIG_HOME/shell/env.private" ]; then
   . "$XDG_CONFIG_HOME/shell/env.private"
