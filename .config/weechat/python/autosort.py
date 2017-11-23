@@ -1,0 +1,1 @@
+../script/weechat-autosort/autosort.py

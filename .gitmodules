@@ -1,3 +1,6 @@
 [submodule ".config/weechat/script/wee-slack"]
 	path = .config/weechat/script/wee-slack
 	url = https://github.com/wee-slack/wee-slack.git
+[submodule ".config/weechat/script/weechat-autosort"]
+	path = .config/weechat/script/weechat-autosort
+	url = https://github.com/de-vri-es/weechat-autosort.git
