@@ -23,14 +23,6 @@ else
   alias git="noglob git"
 fi
 
-screen_command="screen -c '\$XDG_CONFIG_HOME/screen/config'"
-irssi_command="$screen_command -RR irssi 'command irssi --home \$XDG_CONFIG_HOME/irssi'"
-if [[ "$(hostname)" = baltoy.alyssa.is ]]; then
-  alias irssi="$irssi_command"
-else
-  alias irssi="ssh -t alyssa@baltoy.alyssa.is "$irssi_command
-fi
-
 if ls --color -d > /dev/null 2>&1; then
   # GNU ls
   alias ls="ls -AF --si --color=auto"
