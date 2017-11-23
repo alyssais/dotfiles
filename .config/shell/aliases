@@ -39,6 +39,10 @@ else
   alias ls="ls -AFh"
 fi
 
+if command -v neomutt > /dev/null 2>&1; then
+  alias mutt=neomutt
+fi
+
 # Define a noglob function for bash that doesn't do anything.
 command -v noglob > /dev/null 2>&1 || alias noglob=
 

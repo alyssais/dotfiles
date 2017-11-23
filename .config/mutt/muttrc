@@ -1,0 +1,9 @@
+source "accounts/all"
+
+color index red default ~P 
+set auto_tag=yes
+set help=no
+set imap_check_subscribed
+set pager=less
+set sort=threads
+unset prompt_after
