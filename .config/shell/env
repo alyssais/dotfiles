@@ -52,10 +52,6 @@ if [ -d "$HOMEBREW_PREFIX/opt/chruby" ]; then
   chruby "$(< "$XDG_CONFIG_HOME/chruby/version")"
 fi
 
-if [ -n "$HOMEBREW_PREFIX" ]; then
-  export PYTHONPATH="$HOMEBREW_PREFIX/lib/python2.7/site-packages"
-fi
-
 export CLICOLOR=1
 
 export HISTFILE="$XDG_DATA_HOME/$(basename $SHELL)/history"
