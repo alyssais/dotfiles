@@ -60,7 +60,7 @@ export HISTSIZE=10000
 export NLTK_DATA="$XDG_DATA_HOME/nltk"
 
 export LESSHISTFILE="$XDG_DATA_HOME/less/history"
-export LESS="RS" # color, don't wrap
+export LESS="cRS" # use whole terminal, color, don't wrap
 
 if command -v kak > /dev/null 2>&1; then
   export EDITOR=kak
