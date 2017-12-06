@@ -39,7 +39,7 @@ fi
 command -v noglob > /dev/null 2>&1 || alias noglob=
 
 alias screen="$screen_command"
-alias tree="tree -aR -I .git"
+alias tree="tree -aRF -I .git"
 alias tmux='tmux -f "$XDG_CONFIG_HOME/tmux/tmux.conf"'
 alias ri="noglob ri"
 alias ruby-install="ruby-install -c"
