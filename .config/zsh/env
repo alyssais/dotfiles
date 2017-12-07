@@ -4,3 +4,8 @@
 
 export SAVEHIST=$(( $HISTSIZE * 9 / 10 ))
 export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+# Fuck you, Apple.
+# path_helper(8) is all well and good, but /etc/zprofile, which is executed
+# *after* $ZDOTDIR/.zshenv, is not the place to do it.
+unsetopt GLOBAL_RCS
