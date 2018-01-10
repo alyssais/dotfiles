@@ -53,6 +53,11 @@ if [ -d "$HOMEBREW_PREFIX/opt/chruby" ]; then
 fi
 
 export CLICOLOR=1
+if command -v dircolors > /dev/null; then
+  eval "$(dircolors)"
+elif command -v gdircolors > /dev/null; then
+  eval "$(gdircolors)"
+fi
 
 export HISTFILE="$XDG_DATA_HOME/$(basename $SHELL)/history"
 export HISTSIZE=10000
