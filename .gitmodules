@@ -4,3 +4,6 @@
 [submodule ".config/weechat/script/weechat-autosort"]
 	path = .config/weechat/script/weechat-autosort
 	url = https://github.com/de-vri-es/weechat-autosort.git
+[submodule ".config/weechat/script/official"]
+	path = .config/weechat/script/official
+	url = https://github.com/weechat/scripts.git
