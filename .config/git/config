@@ -12,6 +12,7 @@
 	pull-request = pull-request -o
 	longlog = log
 	log = "log --graph --show-notes=\"*\" --abbrev-commit --pretty=format:'%Cred%h %Cgreen(%ar)%Creset -%C(bold red)%d%Creset %s %C(bold blue)<%an>%Creset'"
+	unbranch = "!git branch --sort -HEAD --merged | sed 1d | xargs git branch -d"
 [push]
 	default = current
 [merge]
