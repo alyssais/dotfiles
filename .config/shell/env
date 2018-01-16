@@ -83,7 +83,7 @@ fi
 
 export PRYRC="$XDG_CONFIG_HOME/pry/rc"
 
-export SPEC_OPTS="--color"
+export SPEC_OPTS="--color -w"
 
 export TRAVIS_CONFIG_PATH="$XDG_DATA_HOME/travis"
 
@@ -98,6 +98,8 @@ export FZF_CTRL_T_COMMAND='(git ls-files | uniq) || find .'
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 
 export _Z_DATA="$XDG_DATA_HOME/z"
+
+export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql/history"
 
 if [ -f "$XDG_CONFIG_HOME/shell/env.private" ]; then
   . "$XDG_CONFIG_HOME/shell/env.private"
