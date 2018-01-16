@@ -97,6 +97,8 @@ export FZF_CTRL_T_COMMAND='(git ls-files | uniq) || find .'
 
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 
+export _Z_DATA="$XDG_DATA_HOME/z"
+
 if [ -f "$XDG_CONFIG_HOME/shell/env.private" ]; then
   . "$XDG_CONFIG_HOME/shell/env.private"
 fi
