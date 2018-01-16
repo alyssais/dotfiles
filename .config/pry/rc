@@ -1,0 +1,2 @@
+data_home = ENV.fetch("XDG_DATA_HOME") { "#{ENV.fetch("HOME")}/.local/share" }
+Pry.config.history.file = "#{data_home}/pry/history"
