@@ -43,11 +43,6 @@ fi
 
 REPORTTIME=5
 
-insert_sudo () { zle beginning-of-line; zle -U "sudo " }
-zle -N insert-sudo insert_sudo
-bindkey "^[s" insert-sudo
-bindkey -e
-
 # Make Apple's update_terminal_cwd function available to ZSH
 term_bashrc="/etc/bashrc_$TERM_PROGRAM"
 
