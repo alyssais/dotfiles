@@ -11,4 +11,7 @@ define-command clipboard-export %{
 map global normal <a-Y> :clipboard-import<ret>
 map global normal <a-y> :clipboard-export<ret>
 
+map global insert <tab> '<a-;><gt>'
+map global insert <backtab> '<a-;><lt>'
+
 set global indentwidth 2
