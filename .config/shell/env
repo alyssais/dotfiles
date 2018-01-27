@@ -73,7 +73,7 @@ if command -v kak > /dev/null 2>&1; then
   export VISUAL=kak
 fi
 
-export BUNDLER_EDITOR="subl"
+export BUNDLER_EDITOR="ranger"
 
 export GEMRC="$XDG_CONFIG_HOME/gem/config"
 
