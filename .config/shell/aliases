@@ -43,6 +43,12 @@ alias screen="$screen_command"
 alias tree="tree -aRF -I .git"
 alias tmux='tmux -f "$XDG_CONFIG_HOME/tmux/tmux.conf"'
 alias ri="noglob ri"
-alias ruby-install="ruby-install -c"
+
+ruby-install() {
+  src_dir="$(mktemp -d -t ruby-install)"
+  rubies_dir="$XDG_DATA_HOME/ruby-install/rubies"
+  command ruby-install -c -s "$src_dir" -r "$rubies_dir" -j $@
+}
+
 alias wget="noglob wget"
 alias vim=nvim
