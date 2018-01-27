@@ -86,16 +86,16 @@ load_from_brew() {
 
 load_from_brew || (brew bundle --file="$ZDOTDIR/Brewfile" && load_from_brew)
 
-bindkey "^[[3~" delete-char
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
-
 zmodload zsh/complist
 bindkey -M menuselect "^[[Z" reverse-menu-complete
 
 zmodload zsh/terminfo
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
+
+bindkey "^[[3~" delete-char
+bindkey "^[[F" end-of-line
+bindkey "^[[H" beginning-of-line
 
 if [ "$(uname -s)" = "Darwin" ]
 then
