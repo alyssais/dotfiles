@@ -39,6 +39,7 @@
 	clean = git-lfs clean -- %f
 [diff]
 	compactionHeuristic = true
+	renameLimit = 0
 [credential]
 	helper = osxkeychain
 [hub]
