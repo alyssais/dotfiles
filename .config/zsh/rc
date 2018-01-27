@@ -101,6 +101,10 @@ bindkey "^[[4~" end-of-line
 bindkey "^[^[[C" forward-word
 bindkey "^[^[[D" backward-word
 
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey "^x^e" edit-command-line
+
 if [ "$(uname -s)" = "Darwin" ]
 then
   # Load SSH passphrases from the Keychain.
