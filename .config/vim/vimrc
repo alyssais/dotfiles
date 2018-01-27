@@ -1,0 +1,3 @@
+if !has('nvim')
+  set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
+endif

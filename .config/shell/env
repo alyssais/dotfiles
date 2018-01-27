@@ -73,6 +73,8 @@ if command -v kak > /dev/null 2>&1; then
   export VISUAL=kak
 fi
 
+export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
+
 export BUNDLER_EDITOR="ranger"
 
 export GEMRC="$XDG_CONFIG_HOME/gem/config"
