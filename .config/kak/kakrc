@@ -1,1 +1,14 @@
+define-command clipboard-import %{
+  set-register dquote %sh{ pbpaste }
+  echo -markup "{Information}imported system clipboard to register \""
+}
+
+define-command clipboard-export %{
+  nop %sh{ echo "$kak_reg_dquote" | pbcopy }
+  echo -markup "{Information}exported register \" to system clipboard"
+}
+
+map global normal <a-Y> :clipboard-import<ret>
+map global normal <a-y> :clipboard-export<ret>
+
 set global indentwidth 2
