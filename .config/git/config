@@ -9,9 +9,6 @@
 	signingkey = 736CCDF9EF51BD97
 [alias]
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
-	pull-request = pull-request -o
-	longlog = log
-	log = "log --graph --show-notes=\"*\" --abbrev-commit --pretty=format:'%Cred%h %Cgreen(%ar)%Creset -%C(bold red)%d%Creset %s %C(bold blue)<%an>%Creset'"
 	unbranch = "!git branch --sort -HEAD --merged | sed 1d | xargs git branch -d"
 [push]
 	default = current
@@ -50,3 +47,5 @@
 	autosetuprebase = always
 [diff "plist"]
 	textconv = plutil -convert xml1 -o -
+[format]
+	pretty = format:%Cred%h %Cgreen(%ar)%Creset -%C(bold red)%d%Creset %s %C(bold blue)<%an>%Creset
