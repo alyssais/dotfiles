@@ -3,7 +3,7 @@ hook global BufCreate (.*/)?\.?zsh.* %{
 }
 
 define-command clipboard-import %{
-  set-register dquote %sh{ pbpaste }
+  set-register dquote "%sh{pbpaste}"
   echo -markup "{Information}imported system clipboard to register \""
 }
 
