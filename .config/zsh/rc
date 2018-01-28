@@ -81,7 +81,6 @@ load_from_brew() {
   . "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
   . "$HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
   . "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-  . "$HOMEBREW_PREFIX/opt/liquidprompt/share/liquidprompt"
 }
 
 load_from_brew || (brew bundle --file="$ZDOTDIR/Brewfile" && load_from_brew)
@@ -104,6 +103,19 @@ bindkey "^[^[[D" backward-word
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "^x^e" edit-command-line
+
+if [[ -v TMUX ]]; then
+  _tmux_hook() {
+    local exit_status="$?"
+    tmux set-environment "last_exit_status_$(tmux display-message -p '#D')" "$exit_status"
+    tmux refresh-client -S
+  }
+
+  typeset -ag precmd_functions;
+  if [[ -z ${precmd_functions[(r)_tmux_hook]} ]]; then
+    precmd_functions+=_tmux_hook;
+  fi
+fi
 
 if [ "$(uname -s)" = "Darwin" ]
 then

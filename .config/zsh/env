@@ -9,3 +9,5 @@ export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # path_helper(8) is all well and good, but /etc/zprofile, which is executed
 # *after* $ZDOTDIR/.zshenv, is not the place to do it.
 unsetopt GLOBAL_RCS
+
+PROMPT="%B%# %b"
