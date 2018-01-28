@@ -12,6 +12,8 @@ define-command clipboard-export %{
   echo -markup "{Information}exported register \" to system clipboard"
 }
 
+set global ui_options ncurses_assistant=none
+
 map global normal <a-Y> :clipboard-import<ret>
 map global normal <a-y> :clipboard-export<ret>
 
