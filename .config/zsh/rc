@@ -43,36 +43,6 @@ fi
 
 REPORTTIME=5
 
-# Make Apple's update_terminal_cwd function available to ZSH
-term_bashrc="/etc/bashrc_$TERM_PROGRAM"
-
-_apple_bash() {
-  env -i /bin/bash --noprofile "$@"
-}
-
-_apple_bash_eval() {
-  local input="$1"
-  shift
-  _apple_bash -c '. "$0" && eval $(cat)' "$term_bashrc" "$@" <<< "$input"
-}
-
-_try_import_apple_bash_function() {
-  # Return successfully if the function has already been imported.
-  if command -v "$1" > /dev/null; then return; fi
-
-  # Return unsuccessfully if the function defintion file cannot be found.
-  if ! [ -r "$term_bashrc" ]; then return "$?"; fi
-
-  # Return unsuccessfully if the file does not define the function.
-  if ! _apple_bash_eval 'command -v $1' $1 > /dev/null; then return "$?"; fi
-
-  "$1"() {
-    _apple_bash_eval '"$@"' "${funcstack[1]}" "$@"
-  }
-}
-
-_try_import_apple_bash_function update_terminal_cwd
-
 # Cache this, because it's quite slow.
 HOMEBREW_PREFIX="$(brew --prefix)"
 HOMEBREW_REPO="$(brew --repo)"
