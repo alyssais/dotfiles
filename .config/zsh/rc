@@ -30,16 +30,8 @@ zstyle ':completion:*' verbose true
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 
-# compaudit doesn't take into account that I might want to manage completions
-# through a trusted group.
 autoload -Uz compinit
-local compaudit_dirs=$(compaudit 2>&1 | tail -n +2)
-local ok_pattern='^........-. \d+ root brew'
-if [ -n "$compaudit_dirs" ] && ls -ld $compaudit_dirs | ag -v $ok_pattern; then
-  echo "compaudit detected insecure directories."
-else
-  compinit -u -d "$XDG_CACHE_HOME/zsh/zcompdump"
-fi
+compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
 
 REPORTTIME=5
 
