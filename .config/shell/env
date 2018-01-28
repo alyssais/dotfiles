@@ -111,6 +111,8 @@ export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql/history"
 
 export DOCKER_HOME="$XDG_CONFIG_HOME/docker"
 
+export COPYFILE_DISABLE=1
+
 if [ -f "$XDG_CONFIG_HOME/shell/env.private" ]; then
   . "$XDG_CONFIG_HOME/shell/env.private"
 fi
