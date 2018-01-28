@@ -49,7 +49,7 @@ export BINTRAY_USER="alyssais"
 
 if [ -d "$HOMEBREW_PREFIX/opt/chruby" ]; then
   source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh"
-  RUBIES+=("$XDG_DATA_HOME"/ruby-install/rubies/*)
+  RUBIES+=("$XDG_DATA_HOME"/ruby-install/rubies/*(N))
   chruby "$(< "$XDG_CONFIG_HOME/chruby/version")"
 fi
 
