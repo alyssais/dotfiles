@@ -1,1 +1,1 @@
-rc
+zshrc

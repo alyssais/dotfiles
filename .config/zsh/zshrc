@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 . $XDG_CONFIG_HOME/shell/aliases
-. $XDG_CONFIG_HOME/zsh/opts
+. $XDG_CONFIG_HOME/zsh/zshopts
 
 autoload -Uz colors && colors
 
