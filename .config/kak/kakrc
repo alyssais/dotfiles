@@ -13,6 +13,7 @@ define-command clipboard-export %{
 }
 
 set global ui_options ncurses_assistant=none
+set global autoinfo command|normal
 
 map global normal <a-Y> :clipboard-import<ret>
 map global normal <a-y> :clipboard-export<ret>
