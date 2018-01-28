@@ -109,6 +109,8 @@ export _Z_DATA="$XDG_DATA_HOME/z"
 
 export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql/history"
 
+export DOCKER_HOME="$XDG_CONFIG_HOME/docker"
+
 if [ -f "$XDG_CONFIG_HOME/shell/env.private" ]; then
   . "$XDG_CONFIG_HOME/shell/env.private"
 fi
