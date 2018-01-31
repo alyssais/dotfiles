@@ -26,7 +26,7 @@ map global normal <a-Y> :clipboard-import<ret>
 map global normal <a-y> :clipboard-export<ret>
 
 # Allow indenting from any position in the line, with the correct indentation.
-map global insert <tab> '<a-;><gt>'
+map global insert <tab> '<a-;><a-gt>'
 map global insert <backtab> '<a-;><lt>'
 
 set global indentwidth 2
