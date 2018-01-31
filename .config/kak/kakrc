@@ -3,6 +3,12 @@ hook global BufCreate (.*/)?\.?zsh.* %{
   set-option buffer filetype sh
 }
 
+# Strip trailing whitespace on save
+hook global BufWritePre .*(?<!\.diff)$ %{
+  execute-keys Z%s\s+$<ret>dz
+  echo
+}
+
 define-command -docstring "import from the system clipboard" clipboard-import %{
   set-register dquote "%sh{pbpaste}"
   echo -markup "{Information}imported system clipboard to register \""
