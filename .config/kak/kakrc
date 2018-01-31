@@ -19,8 +19,6 @@ define-command -docstring "export to the system clipboard" clipboard-export %{
   echo -markup "{Information}exported register \" to system clipboard"
 }
 
-set global ui_options ncurses_assistant=none
-
 map global normal <a-Y> :clipboard-import<ret>
 map global normal <a-y> :clipboard-export<ret>
 
@@ -28,4 +26,5 @@ map global normal <a-y> :clipboard-export<ret>
 map global insert <tab> '<a-;><a-gt>'
 map global insert <backtab> '<a-;><lt>'
 
-set global indentwidth 2
+set-option global indentwidth 2
+set-option global ui_options ncurses_assistant=none
