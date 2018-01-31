@@ -1,13 +1,14 @@
+# Highlight any files whose names start with "zsh" as sh
 hook global BufCreate (.*/)?\.?zsh.* %{
   set-option buffer filetype sh
 }
 
-define-command clipboard-import %{
+define-command -docstring "import from the system clipboard" clipboard-import %{
   set-register dquote "%sh{pbpaste}"
   echo -markup "{Information}imported system clipboard to register \""
 }
 
-define-command clipboard-export %{
+define-command -docstring "export to the system clipboard" clipboard-export %{
   nop %sh{ echo "$kak_reg_dquote" | pbcopy }
   echo -markup "{Information}exported register \" to system clipboard"
 }
@@ -18,6 +19,7 @@ set global autoinfo command|normal
 map global normal <a-Y> :clipboard-import<ret>
 map global normal <a-y> :clipboard-export<ret>
 
+# Allow indenting from any position in the line, with the correct indentation.
 map global insert <tab> '<a-;><gt>'
 map global insert <backtab> '<a-;><lt>'
 
