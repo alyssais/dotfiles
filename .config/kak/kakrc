@@ -5,7 +5,10 @@ hook global BufCreate (.*/)?\.?zsh.* %{
 
 # Strip trailing whitespace on save
 hook global BufWritePre .*(?<!\.diff)$ %{
-  execute-keys Z%s\s+$<ret>dz
+  # Use the a register because the default (^) is cleared by <s>
+  execute-keys %{"aZ}
+  try %{execute-keys %{%s\h+$<ret>d}}
+  execute-keys %{"az}
   echo
 }
 
