@@ -7,3 +7,6 @@
 [submodule ".config/weechat/script/official"]
 	path = .config/weechat/script/official
 	url = https://github.com/weechat/scripts.git
+[submodule ".config/kak/eslint-formatter-kakoune"]
+	path = .config/kak/eslint-formatter-kakoune
+	url = git@github.com:Delapouite/eslint-formatter-kakoune.git

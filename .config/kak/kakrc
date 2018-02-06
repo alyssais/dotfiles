@@ -3,6 +3,13 @@ hook global BufCreate (.*/)?\.?zsh.* %{
   set-option buffer filetype sh
 }
 
+# ESLint
+hook global WinSetOption filetype=javascript %{
+  set-option buffer lintcmd "eslint --format %val{config}/eslint-formatter-kakoune/index.js --stdin-filename \"$kak_buffile\" --stdin <"
+  lint-enable
+  lint
+}
+
 # Strip trailing whitespace on save
 hook global BufWritePre .*(?<!\.diff)$ %{
   # Use the a register because the default (^) is cleared by <s>
