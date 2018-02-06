@@ -3,6 +3,12 @@ hook global BufCreate (.*/)?\.?zsh.* %{
   set-option buffer filetype sh
 }
 
+# Highlight files ending in .conf as ini
+# (Will probably be close enough)
+hook global BufCreate .*\.conf %{
+  set-option buffer filetype ini
+}
+
 # ESLint
 hook global WinSetOption filetype=javascript %{
   set-option buffer lintcmd "eslint --format %val{config}/eslint-formatter-kakoune/index.js --stdin-filename \"$kak_buffile\" --stdin <"
