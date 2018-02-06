@@ -35,6 +35,13 @@ define-command -docstring "export to the system clipboard" clipboard-export %{
   echo -markup "{Information}exported register \" to system clipboard"
 }
 
+define-command -docstring "open a file using fzf" open %{
+  edit "%sh{
+    git ls-files -oc --exclude-standard | fzf-tmux -r 80 --reverse
+  }"
+}
+alias global o open
+
 map global normal <a-Y> :clipboard-import<ret>
 map global normal <a-y> :clipboard-export<ret>
 
