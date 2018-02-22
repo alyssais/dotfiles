@@ -31,7 +31,7 @@ define-command -docstring "import from the system clipboard" clipboard-import %{
 }
 
 define-command -docstring "export to the system clipboard" clipboard-export %{
-  nop %sh{ echo "$kak_reg_dquote" | pbcopy }
+  nop %sh{ printf "%s" "$kak_reg_dquote" | pbcopy }
   echo -markup "{Information}exported register \" to system clipboard"
 }
 
