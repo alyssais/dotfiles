@@ -48,7 +48,7 @@
 [diff "plist"]
 	textconv = plutil -convert xml1 -o -
 [format]
-	pretty = format:%Cred%h %Cgreen(%ar)%Creset -%C(bold red)%d%Creset %s %C(bold blue)<%an>%Creset
+	pretty = format:%Cred%h %Cgreen(%ar)%Creset -%C(bold red)%d%Creset %s %C(bold blue)<%aN>%Creset
 [grep]
 	lineNumber = true
 	patternType = perl
