@@ -67,5 +67,6 @@ map global insert <backtab> '<a-;><lt>'
 set-option global indentwidth 2
 set-option global ui_options ncurses_assistant=none
 set-option global scrolloff 5,5
+set-option global autoreload yes
 
 add-highlighter global number_lines -hlcursor -separator "│ "
