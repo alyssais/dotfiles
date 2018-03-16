@@ -50,12 +50,6 @@ export HOMEBREW_DEVELOPER=1
 export HOMEBREW_VERBOSE=1
 export BINTRAY_USER="alyssais"
 
-if [ -d "$HOMEBREW_PREFIX/opt/chruby" ]; then
-  source "$HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh"
-  RUBIES+=("$XDG_DATA_HOME"/ruby-install/rubies/*(N))
-  chruby "$(< "$XDG_CONFIG_HOME/chruby/version")"
-fi
-
 export CLICOLOR=1
 if command -v dircolors > /dev/null; then
   eval "$(dircolors)"
