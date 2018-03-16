@@ -62,6 +62,15 @@ bindkey "^[[4~" end-of-line
 bindkey "^[^[[C" forward-word
 bindkey "^[^[[D" backward-word
 
+if [ -n "$TMUX" ]; then
+  tmux-page-up() { tmux copy-mode -ue }
+  tmux-page-down() { tmux send-keys -X page-down 2>/dev/null }
+  zle -N tmux-page-up
+  zle -N tmux-page-down
+  bindkey "^[[5~" tmux-page-up
+  bindkey "^[[6~" tmux-page-down
+fi
+
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "^x^e" edit-command-line
