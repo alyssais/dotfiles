@@ -1,0 +1,1 @@
+../script/weechat-vimode/vimode.py

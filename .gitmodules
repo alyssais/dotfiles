@@ -10,3 +10,6 @@
 [submodule ".config/kak/eslint-formatter-kakoune"]
 	path = .config/kak/eslint-formatter-kakoune
 	url = git@github.com:Delapouite/eslint-formatter-kakoune.git
+[submodule ".config/weechat/script/weechat-vimode"]
+	path = .config/weechat/script/weechat-vimode
+	url = https://github.com/GermainZ/weechat-vimode
