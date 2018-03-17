@@ -85,7 +85,7 @@ fi
 
 export PRYRC="$XDG_CONFIG_HOME/pry/rc"
 
-export SPEC_OPTS="--color -w"
+export SPEC_OPTS="--color"
 
 export TRAVIS_CONFIG_PATH="$XDG_DATA_HOME/travis"
 
