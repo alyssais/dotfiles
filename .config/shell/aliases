@@ -9,7 +9,7 @@ ag() {
   fi
 }
 
-alias beep='echo "\a"'
+alias beep='printf "\a"'
 alias cargo="noglob cargo"
 alias clippy="rustup run nightly cargo clippy"
 alias curl="noglob curl"
