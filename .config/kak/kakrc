@@ -18,10 +18,7 @@ hook global WinSetOption filetype=javascript %{
 
 # Strip trailing whitespace on save
 hook global BufWritePre .*(?<!\.diff)$ %{
-  # Use the a register because the default (^) is cleared by <s>
-  execute-keys %{"aZ}
-  try %{execute-keys %{%s\h+$<ret>d}}
-  execute-keys %{"az}
+  try %{execute-keys -draft %{%s\h+$<ret>d}}
   echo
 }
 
