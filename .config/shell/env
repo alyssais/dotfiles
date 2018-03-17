@@ -97,7 +97,7 @@ export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/repl_history"
 export npm_config_cache="$XDG_CACHE_HOME/npm"
 export npm_config_devdir="$XDG_CACHE_HOME/node-gyp"
 
-export FZF_CTRL_T_COMMAND='(git ls-files | uniq) || find .'
+export FZF_CTRL_T_COMMAND="fzf_ctrl_t"
 
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 

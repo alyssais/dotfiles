@@ -16,6 +16,14 @@ alias curl="noglob curl"
 alias dig="noglob dig"
 alias find="noglob find"
 
+fzf_ctrl_t() {
+  if git rev-parse >/dev/null 2>&1; then
+    git ls-files -co --exclude-standard
+  else
+    find . | sed 's/^\.\///g'
+  fi
+}
+
 if command -v hub > /dev/null 2>&1; then
   alias git="noglob hub"
 else
