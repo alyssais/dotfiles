@@ -44,13 +44,24 @@ define-command -params 1.. -docstring "change file modes" chmod %{
 }
 
 define-command -docstring "execute the current buffer" run %{
-  evaluate-commands -save-regs x %{
-    set-register x "%sh{mktemp -t kak-run}"
-    write "%val{reg_x}"
-    nop %sh{
-      chmod u+x "$kak_reg_x"
-      tmux split-window -h -l 80 "$kak_reg_x; read"
-    }
+  %sh{
+    case "$kak_buffile" in
+    *_spec.rb)
+      tmux split-window -h -l 80 "rspec -- $kak_buffile; read"
+      ;;
+    *)
+      echo '
+        evaluate-commands -save-regs x %{
+          set-register x "%sh{mktemp -t kak-run}"
+          write "%val{reg_x}"
+          nop %sh{
+            chmod u+x "$kak_reg_x"
+            tmux split-window -h -l 80 "$kak_reg_x; read"
+          }
+        }
+      '
+      ;;
+    esac
   }
 }
 
