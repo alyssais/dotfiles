@@ -48,11 +48,16 @@ define-command -params 1.. -docstring "change file modes" chmod %{
   nop %sh{ chmod $@ "$kak_buffile" }
 }
 
-define-command -docstring "execute the current buffer" run %{
+declare-option str last_test
+define-command -docstring "intelligently run code" run %{
   %sh{
     case "$kak_buffile" in
     *_spec.rb)
-      tmux split-window -h -l 80 "rspec -- $kak_buffile; read"
+      echo "set-option global last_test %{$kak_buffile}"
+      tmux split-window -h -l 80 "direnv exec $(which rspec) -- $kak_buffile; read"
+      ;;
+    *.rb)
+      tmux split-window -h -l 80 "direnv exec $(which rspec) -- $kak_opt_last_test; read"
       ;;
     *)
       echo '
