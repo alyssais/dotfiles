@@ -32,6 +32,10 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$CARGO_HOME/bin:$PATH"
 
+if command -v direnv > /dev/null; then
+  eval "$(direnv hook "$(ps -p $$ -ocomm=)")"
+fi
+
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 if command -v gpg-agent > /dev/null; then
   export SSH_AUTH_SOCK="$GNUPGHOME/S.gpg-agent.ssh"

@@ -102,10 +102,6 @@ if [ -d "$command_not_found_repo" ]; then
   . "$command_not_found_repo/handler.sh"
 fi
 
-if command -v direnv > /dev/null; then
-  eval "$(direnv hook zsh)"
-fi
-
 if [ -d "$HOMEBREW_PREFIX/opt/z" ]; then
   source "$HOMEBREW_PREFIX/opt/z/etc/profile.d/z.sh"
 fi
