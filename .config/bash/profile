@@ -9,4 +9,3 @@ fi
 
 . "$HOME/.config/shell/env"
 . "$XDG_CONFIG_HOME/shell/aliases"
-
