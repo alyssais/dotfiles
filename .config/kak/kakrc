@@ -75,6 +75,15 @@ define-command -docstring "intelligently run code" run %{
   }
 }
 
+define-command mkdirp %{
+  nop %sh{mkdir -p "$(dirname "$kak_buffile")"}
+}
+
+define-command mkdirpw %{
+  mkdirp
+  write
+}
+
 map global normal <a-Y> :clipboard-import<ret>
 map global normal <a-y> :clipboard-export<ret>
 
