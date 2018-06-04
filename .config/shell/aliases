@@ -47,6 +47,7 @@ fi
 # Define a noglob function for bash that doesn't do anything.
 command -v noglob > /dev/null 2>&1 || alias noglob=
 
+alias parachute="devkit parachute"
 alias screen="$screen_command"
 alias tree="tree -aRF -I .git"
 alias tmux='tmux -f "$XDG_CONFIG_HOME/tmux/tmux.conf"'
