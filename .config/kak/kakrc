@@ -91,6 +91,9 @@ map global normal <a-y> :clipboard-export<ret>
 map global insert <tab> '<a-;><a-gt>'
 map global insert <s-tab> '<a-;><lt>'
 
+map -docstring "Remove Symbol hashrockets" global user \
+  <gt> 's:\S+<space>+=<gt><ret>;<a-?><space>+<ret>c:<esc>h<a-/>:<ret>d'
+
 set-option global indentwidth 2
 set-option global ui_options ncurses_assistant=none
 set-option global scrolloff 5,5
