@@ -4,3 +4,4 @@ sec.conf
 script/plugins.xml.gz
 zncplayback_times.json
 /otr/
+/weechat_crash_*.log
