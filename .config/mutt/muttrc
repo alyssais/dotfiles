@@ -1,9 +1,14 @@
-source "accounts/all"
-
-color index red default ~P 
+color index red default ~P
 set auto_tag=yes
 set help=no
-set imap_check_subscribed
 set pager=less
 set sort=threads
 unset prompt_after
+
+set folder = ~/mail
+set spoolfile = +INBOX
+# set record = "~/mail/[Gmail]/Sent Mail"
+source /usr/local/opt/neomutt/share/doc/neomutt/colorschemes/vombatidae.neomuttrc
+source /usr/local/opt/neomutt/share/doc/neomutt/samples/gpg.rc
+
+macro index,pager d "<save-message>=[Gmail]/All<complete><enter>" "archive message"
