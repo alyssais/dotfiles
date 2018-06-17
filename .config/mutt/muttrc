@@ -1,7 +1,7 @@
 color index red default ~P
 set auto_tag=yes
 set help=no
-set pager=less
+set pager = "less -+S"
 set sort=threads
 unset prompt_after
 
