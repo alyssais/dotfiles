@@ -3,6 +3,7 @@ set auto_tag=yes
 set help=no
 set pager = "less -+S"
 set sort=threads
+set sort_browser = new
 set quit = ask-yes
 set beep_new = yes
 unset prompt_after
