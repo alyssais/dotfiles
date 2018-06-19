@@ -3,6 +3,7 @@ set auto_tag=yes
 set help=no
 set pager = "less -+S"
 set sort=threads
+set beep_new = yes
 unset prompt_after
 
 set folder = ~/mail
