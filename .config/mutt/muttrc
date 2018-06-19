@@ -1,3 +1,5 @@
+source accounts/all
+
 color index red default ~P
 set auto_tag=yes
 set help=no
@@ -10,9 +12,6 @@ unset prompt_after
 
 set folder = ~/mail
 set spoolfile = +INBOX
-set trash = "+[Gmail]/All Mail"
-# set record = "~/mail/[Gmail]/Sent Mail"
 source /usr/local/opt/neomutt/share/doc/neomutt/colorschemes/vombatidae.neomuttrc
 source /usr/local/opt/neomutt/share/doc/neomutt/samples/gpg.rc
 
-mailboxes `$XDG_CONFIG_HOME/mutt/mailboxes.rb`
