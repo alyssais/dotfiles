@@ -56,7 +56,7 @@ define-command -docstring "intelligently run code" run %{
       echo "set-option global last_test %{$kak_buffile}"
       tmux split-window -h -l 80 "direnv exec $(which rspec) -- $kak_buffile; read"
       ;;
-    *.{e,}rb)
+    *.rb|*.erb)
       tmux split-window -h -l 80 "direnv exec $(which rspec) -- $kak_opt_last_test; read"
       ;;
     *)
