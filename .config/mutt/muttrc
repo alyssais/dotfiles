@@ -1,6 +1,7 @@
 color index red default ~P
 
 set auto_tag = yes
+set beep = no
 set beep_new = yes
 set folder = ~/mail
 set help = no
