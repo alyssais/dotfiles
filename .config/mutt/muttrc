@@ -13,5 +13,4 @@ unset prompt_after
 set folder = ~/mail
 set spoolfile = +INBOX
 source /usr/local/opt/neomutt/share/doc/neomutt/colorschemes/vombatidae.neomuttrc
-source /usr/local/opt/neomutt/share/doc/neomutt/samples/gpg.rc
-
+source gpg.rc
