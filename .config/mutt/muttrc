@@ -1,16 +1,17 @@
-source accounts/all
-
 color index red default ~P
-set auto_tag=yes
-set help=no
-set pager = "less -+S"
-set sort=threads
-set sort_browser = new
-set quit = ask-yes
+
+set auto_tag = yes
 set beep_new = yes
+set folder = ~/mail
+set help = no
+set pager = "less -+S"
+set quit = ask-yes
+set sort = threads
+set sort_browser = new
 unset prompt_after
 
-set folder = ~/mail
 set spoolfile = +INBOX
+
+source accounts/all
 source /usr/local/opt/neomutt/share/doc/neomutt/colorschemes/vombatidae.neomuttrc
 source gpg.rc
