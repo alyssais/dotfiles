@@ -32,6 +32,8 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$CARGO_HOME/bin:$PATH"
 
+export MAILCAPS="$XDG_CONFIG_HOME/mail/mailcap"
+
 if command -v direnv > /dev/null; then
   eval "$(direnv hook "$(ps -p $$ -ocomm=)")"
 fi
