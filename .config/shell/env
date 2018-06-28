@@ -71,14 +71,10 @@ export NLTK_DATA="$XDG_DATA_HOME/nltk"
 export LESSHISTFILE="$XDG_DATA_HOME/less/history"
 export LESS="cRS" # use whole terminal, color, don't wrap
 
-if command -v kak > /dev/null 2>&1; then
-  export EDITOR=kak
-  export VISUAL=kak
-fi
+export EDITOR=edit
+export VISUAL=edit
 
 export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
-
-export BUNDLER_EDITOR="ranger"
 
 export GEMRC="$XDG_CONFIG_HOME/gem/config"
 
