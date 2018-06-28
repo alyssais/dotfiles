@@ -87,6 +87,8 @@ define-command mkdirpw %{
 map global normal <a-Y> :clipboard-import<ret>
 map global normal <a-y> :clipboard-export<ret>
 
+map global normal / /(?i)
+
 # Allow indenting from any position in the line, with the correct indentation.
 map global insert <tab> '<a-;><a-gt>'
 map global insert <s-tab> '<a-;><lt>'
