@@ -13,3 +13,6 @@
 [submodule ".config/weechat/script/weechat-vimode"]
 	path = .config/weechat/script/weechat-vimode
 	url = https://github.com/GermainZ/weechat-vimode
+[submodule ".config/kak/kakwiki"]
+	path = .config/kak/kakwiki
+	url = https://github.com/alyssais/kakwiki

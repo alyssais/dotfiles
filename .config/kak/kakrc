@@ -110,3 +110,5 @@ set-option global autoreload yes
 add-highlighter global number_lines -hlcursor -separator "│"
 
 colorscheme tomorrow-night
+
+source "%val{config}/kakwiki/wiki.kak"
