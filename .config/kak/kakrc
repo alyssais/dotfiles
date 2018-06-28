@@ -102,6 +102,14 @@ map -docstring "Convert single quotes to double quotes" global user \
 map -docstring "Toggle line comments" global user \
   %{#} %{:comment-line<ret>}
 
+declare-user-mode bookmarks
+map -docstring "Edit bookmarked file" global user b \
+  %{:enter-user-mode bookmarks<ret>}
+
+map -docstring "kakrc" global bookmarks k \
+  %{:edit "%val{config}/kakrc"<ret>}
+map -docstring "wiki" global bookmarks w %{:edit-wiki-index<ret>}
+
 set-option global indentwidth 2
 set-option global ui_options ncurses_assistant=none
 set-option global scrolloff 5,5
