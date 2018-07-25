@@ -17,3 +17,6 @@ gem_graph.png
 
 # Direnv
 .envrc
+
+# ctags
+/tags
