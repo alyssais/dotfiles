@@ -38,6 +38,7 @@
 [diff]
 	compactionHeuristic = true
 	renameLimit = 0
+	wsErrorHighlight = all
 [credential]
 	helper = osxkeychain
 [hub]
