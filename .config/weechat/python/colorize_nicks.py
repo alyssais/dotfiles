@@ -1,0 +1,1 @@
+../script/official/python/colorize_nicks.py
