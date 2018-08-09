@@ -111,6 +111,8 @@ export DOCKER_HOME="$XDG_CONFIG_HOME/docker"
 
 export COPYFILE_DISABLE=1
 
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
+
 if [ -f "$XDG_CONFIG_HOME/shell/env.private" ]; then
   . "$XDG_CONFIG_HOME/shell/env.private"
 fi
